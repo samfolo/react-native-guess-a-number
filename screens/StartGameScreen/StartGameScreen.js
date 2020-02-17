@@ -1,11 +1,13 @@
-import React from 'react-native';
+import React from 'react';
 import { View, Text } from 'react-native';
 
 import styles from './StartGameScreen.styles';
 
 const StartGameScreen = props => {
   return (
-    <View></View>
+    <View style={styles.screen}>
+      <Text>The Game Screen</Text>
+    </View>
   );
 }
 
