@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button } from 'react-native';
+import { View, Text, TextInput, Button, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import styles from './StartGameScreen.styles';
 import colors from '../../constants/colors';
 
@@ -14,30 +14,32 @@ const StartGameScreen = props => {
   }
 
   return (
-    <View style={styles.screen}>
-      <Text style={styles.title}>Start a New Game!</Text>
-      <Card style={styles.inputContainer}>
-        <Text>Select a Number</Text>
-        <Input 
-          blurOnSubmit 
-          autoCapitalize="none" 
-          autoCorrect={false} 
-          keyboardType="number-pad"
-          maxLength={2}
-          style={styles.input}
-          onChangeText={numberedInputHandler}
-          value={enteredValue}
-        />
-        <View style={styles.buttonContainer}>
-          <View style={styles.button}>
-            <Button title="Reset" onPress={() => {}} color={colors.accents} />
+    <TouchableWithoutFeedback onPress={() => {Keyboard.dismiss}}>
+      <View style={styles.screen}>
+        <Text style={styles.title}>Start a New Game!</Text>
+        <Card style={styles.inputContainer}>
+          <Text>Select a Number</Text>
+          <Input 
+            blurOnSubmit 
+            autoCapitalize="none" 
+            autoCorrect={false} 
+            keyboardType="number-pad"
+            maxLength={2}
+            style={styles.input}
+            onChangeText={numberedInputHandler}
+            value={enteredValue}
+          />
+          <View style={styles.buttonContainer}>
+            <View style={styles.button}>
+              <Button title="Reset" onPress={() => {}} color={colors.accents} />
+            </View>
+            <View style={styles.button}>
+              <Button title="Confirm" onPress={() => {}} color={colors.primary} />
+            </View>
           </View>
-          <View style={styles.button}>
-            <Button title="Confirm" onPress={() => {}} color={colors.primary} />
-          </View>
-        </View>
-      </Card>
-    </View>
+        </Card>
+      </View>
+    </TouchableWithoutFeedback>
   );
 }
 
