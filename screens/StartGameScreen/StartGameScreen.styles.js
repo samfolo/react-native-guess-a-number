@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import colors from '../../constants/colors';
 
 const styles = StyleSheet.create({
   screen: {
@@ -28,6 +29,16 @@ const styles = StyleSheet.create({
     width: 50,
     textAlign: 'center',
   },
+  chosenNumber: {
+    fontSize: 30,
+    color: colors.confirmations,
+  },
+  chosenNumberContainer: {
+    padding: 20,
+    height: 'auto',
+    marginTop: 20,
+    alignItems: 'center',
+  }
 });
 
 export default styles;
